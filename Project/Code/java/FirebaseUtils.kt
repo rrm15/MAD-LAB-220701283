@@ -1,8 +1,9 @@
-package com.example.ezbill.models
+package com.example.ezbill.utils
 
-data class Order(
-    val productNames: List<String> = listOf(),
-    val totalPrice: Double = 0.0,
-    val timestamp: Long = System.currentTimeMillis(),
-    val buyerEmail: String = ""
-)
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.FirebaseFirestore
+
+object FirebaseUtils {
+    val auth: FirebaseAuth by lazy { FirebaseAuth.getInstance() }
+    val db: FirebaseFirestore by lazy { FirebaseFirestore.getInstance() }
+}
